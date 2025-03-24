@@ -1,0 +1,90 @@
+In recent years, a country ABC, fearing the entry of undesirable individuals, has changed its immigration control policy. At the airport, when crossing the border, all arrivals are divided into two large streams – citizens of country ABC and non-citizens. Citizens are checked using a simpler procedure, while non-citizens undergo a thorough examination of their documents, luggage, and even fingerprinting. Let us consider that all these procedures constitute the customs clearance process.
+
+Customs work is organized as follows (see the diagram "Customs Workflow"). Each customs officer has their own workstation. Each workstation is of one of two types: type P – for citizen control, and type N – for non-citizen control. For each type, the workstations are numbered sequentially, starting from 1 up to the number equal to the total workstations of that type. Each workstation, i.e., the customs officer working there, has a specific processing speed for travelers. Assume that for a given customs officer, the processing speed for any traveler is constant.
+
+Travelers enter the customs building through a single door, meaning each traveler has a unique time of arrival at the customs building. We will consider this unique arrival time as the traveler’s unique identifier (traveler ID).
+
+Upon entering the customs building, a traveler must immediately check if there is a free customs officer who can serve them (based on their status as a citizen or non-citizen). If there is a free customs officer, the traveler should approach the available officer with the lowest workstation number. If no customs officer is free, the traveler must wait in line until an officer becomes available. Travelers cannot approach an officer of the wrong type; for instance, there may be a long queue at the non-citizen officers while the citizen officers are idle.
+
+After being checked, the traveler exits the building (assume that undesirable individuals are escorted out). The exit time is calculated by adding the arrival time, the time spent waiting in line, and the time spent at the customs officer's workstation. The exit is large enough to allow all travelers who wish to leave at the same time to do so simultaneously.
+
+Your task is to write a program that receives data about the number of customs officers for each type, the processing speeds of the officers, the types of travelers, and their arrival times at the customs building. The output should indicate the exit time of each traveler from the customs building. The results must be printed in chronological order. If multiple travelers have the same exit time, citizens should be printed first, and within the same status group, travelers should be ordered by the lowest customs officer number.
+
+There are [1..99] customs officers assigned to each traveler type. The processing time for a traveler ranges from [1..100,000]. Traveler arrival times or IDs range from [1..4,000,000] and are listed in increasing order in the input file.
+
+The input data is valid according to the input format and given constraints.
+
+Customs Workflow Diagram
+Input: The first line of the input file specifies the number of customs officers and their default processing times in the format:
+
+P_Officers N_Officers P_Time N_Time
+P_Officers specifies the number of customs officers [1..99] serving citizens.
+
+N_Officers specifies the number of customs officers [1..99] serving non-citizens.
+
+P_Time specifies the default processing time [1..100,000] for officers serving citizens.
+
+N_Time specifies the default processing time [1..100,000] for officers serving non-citizens.
+
+The following lines, in count [0..P_Officers + N_Officers], specify the processing time for specific customs officers. Each line is in the format:
+
+T Type Officer Time
+Type is a single letter indicating the officer’s type (P for citizens or N for non-citizens).
+
+Officer specifies the officer's number [1..99] within their type group.
+
+Time specifies the processing time [1..100,000] for the officer.
+
+The subsequent lines, in count [0..4,000,000], describe the arrival of individual travelers at the customs building. Each line is in the format:
+
+Type ID
+Type is a single letter indicating the traveler’s type (P for citizen or N for non-citizen).
+
+ID specifies the traveler’s arrival time [1..4,000,000], which also serves as their ID.
+
+The input file always ends with a line containing the capital letter X.
+
+Output: Based on the input file, the output should provide the results for each traveler in the format:
+
+ID Out
+ID specifies the traveler’s arrival time [1..4,000,000], which also serves as their ID.
+
+Out specifies the traveler’s exit time [1..4,000,000,000].
+
+If the input file contains no entries for travelers, the output should print the word nothing (without quotes).
+
+Example: Input file (customs.in):
+
+2 3 10 50
+T P 1 7
+T N 2 80
+P 1
+N 2
+N 10
+N 20
+N 30
+N 40
+P 45
+P 50
+P 53
+N 60
+X
+Output file (customs.out):
+
+1 8
+45 52
+2 52
+53 60
+50 60
+20 70
+10 90
+30 102
+40 120
+60 170
+
+
+
+
+
+
+

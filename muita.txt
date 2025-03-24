@@ -1,0 +1,15 @@
+Iebraucējam, ieejot muitas ēkā, uzreiz jāskatās vai nav brīvs kāds muitnieks, kas drīkst viņu apkalpot (atbilstoši pilsoņa vai nepilsoņa statusam). Ja ir kāds brīvs muitnieks, tad jādodas pie tā brīvā muitnieka, kuram ir mazākais darba vietas numurs. Ja brīva muitnieka nav, tad jāsāk gaidīt rindā, kamēr kāds muitnieks kļūst brīvs. Pie nepareizā muitnieka dodies nedrīkst, t.i. var būt situācija, piemēram, ka pie nepilsoņu muitniekiem ir liela rinda, bet pilsoņu muitnieki ir bez darba.
+
+Kā zināt vai mutnieks ir brīvs?
+Kā notiek gadīšana, kad gaida, kad atbrīvosies kāds muitnieks?
+Kas ir hronoloģiskas secība un kā saprast, ka rezultāti jādrukā hronoloģiskā secībā?
+
+Kā varēs nodrošināt to, ka rezultāti tiek izvadīti korekti? Rezultāti jādrukā hronoloģiskā secībā. Ja vienā laika momentā ir vairākas personas, tad pirmās jādrukā personas ar pilsoņa statusu, bet viena statusa pilsoņu ietvaros, tas, kuram bija mazāks muitnieka kārtas numurs.
+
+Kā saprast nosacījumu, ka uzdevuma atmiņa ir 5MB?
+Kā nodrošināt, ka izpildes laiks ir 2 sekundes?
+
+Kā izveidot šo uzdevumu pēc šī nosacījuma:
+nedrīkst izmantot gatavas datu struktūras un algoritmus, izņemot funkcijas, kas paredzētas darbam ar failiem. Ierobežojums attiecas arī uz šādām populārām bibliotēkām/klasēm: STL, String, Vector, List, Stack, Deque, Map, Unordered_map, Bits.
+
+?
